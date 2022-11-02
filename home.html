@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>2022's Best Books</title>
   </head>
   <body>
@@ -24,7 +25,9 @@
         </select>
       </div>
       <br />
-      <div class="favoriteCount">Favorite Books 0</div>
+      <div class="favoriteCount">Favorite Books <span class="favoriteCountAdjust">0</span></div>
+      <input type="checkbox" class="showFavoritesOnly" name="favoritesCheckBox" value="View Favorites Only">
+      <label for="favoritesCheckBox">View Favorites Only</label>
       <div class="container">
         <div class="bookSubmitFormDiv">
           <form id="bookForm" class="bookForm">
@@ -82,6 +85,28 @@
             placeholder="To Search Start typing."
           />
         </div>
+      </div>
+      <div class="booksDiv">
+        <!-- <div class="books">
+          <div class="imageHolder">Image Here</div>
+          <p>Author:</p>
+          <p>Title:</p>
+          <ul>
+            <li>Book Subject</li>
+          </ul>
+          <p>Language:</p>
+          <span>Favorite</span>
+        </div>
+        <div class="books">
+          <div class="imageHolder">Image Here</div>
+          <p>Author:</p>
+          <p>Title:</p>
+          <ul>
+            <li>Book Subject</li>
+          </ul>
+          <p>Language:</p>
+          <span>Favorite</span>
+        </div> -->
       </div>
     </div>
     <script src="js/book-data.js"></script>

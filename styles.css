@@ -1,0 +1,27 @@
+.books {
+    border: 1px solid black;
+    width: 25%;
+}
+
+.books span {
+    background: red;
+}
+.bookSubmitFormDiv {
+    width: 25%;
+    border: 1px solid red;
+    /* background: red; */
+}
+
+.searchBoxDiv {
+    width: 25%;
+    border: 1px solid blue
+}
+
+/* .FavoriteCount {
+    width: 25%;
+    border: 1px solid green;
+} */
+
+.imageHolder {
+    width: 10%;
+}
