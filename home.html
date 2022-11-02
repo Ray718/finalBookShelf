@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2022's Best Books</title>
+  </head>
+  <body>
+    <div class="pageWrapper">
+      <div class="pageHeading">
+        <h1 class="centralLibrary">2022's Best Books</h1>
+        <br />
+      </div>
+      <div class="sortSelectionDiv">
+        <select name="sort" id="sort" class="sortSelection">
+          <option value="Sort">Sort By:</option>
+          <option value="byAuthorAZ">By Author A-Z</option>
+          <option value="byAuthorZA">By Author Z-A</option>
+          <option value="byTitleAZ">By Title A-Z</option>
+          <option value="byTitleZA">By Title Z-A</option>
+          <option value="bySubjectAscending">By Subjects Ascending</option>
+          <option value="bySubjectsDescending">By Subjects Descending</option>
+        </select>
+      </div>
+      <br />
+      <div class="favoriteCount">Favorite Books 0</div>
+      <div class="container">
+        <div class="bookSubmitFormDiv">
+          <form id="bookForm" class="bookForm">
+            <div class="bookFormDiv">
+              <label for="author">Author</label>
+              <br />
+              <input
+                type="text"
+                id="author"
+                class="formForBooks"
+                placeholder="Author's Name(Last,First)"
+              />
+            </div>
+            <div class="bookFormDiv">
+              <label for="title">Title</label>
+              <br />
+              <input
+                type="text"
+                id="title"
+                class="formForBooks"
+                placeholder="Book Title"
+              />
+            </div>
+            <div class="bookFormDiv">
+              <label for="subject">Subject</label>
+              <br />
+              <input
+                type="text"
+                id="subject"
+                class="formForBooks"
+                placeholder="book subjects, separated by commas"
+              />
+            </div>
+            <div class="bookFormDiv">
+              <label for="language">Language</label>
+              <br />
+              <input
+                type="text"
+                id="language"
+                class="formForBooks"
+                placeholder="Example. en,fn, etc."
+              />
+            </div>
+            <br />
+            <input class="submitButton" type="submit" value="Add Book" />
+          </form>
+          <br />
+        </div>
+        <div class="searchBoxDiv">
+          <label for="search">Search</label>
+          <input
+            type="text"
+            id="search"
+            class="searchBox"
+            placeholder="To Search Start typing."
+          />
+        </div>
+      </div>
+    </div>
+    <script src="js/book-data.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

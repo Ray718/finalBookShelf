@@ -1,0 +1,19 @@
+body {
+    display: flex;
+}
+.main-container {
+    /* width: 50%; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.aboutPage {
+    font-size: 15px;
+    border: 1px solid black;
+    width: 50%;
+    /* align-self: flex-start; */
+}
