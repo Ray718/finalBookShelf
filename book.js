@@ -42,6 +42,8 @@ class Book {
     commentBox.setAttribute("placeholder", "Enter Comment");
     commentBox.setAttribute("id", "comment-box");
     commentBox.setAttribute('maxLength', '280')
+    commentBox.setAttribute('spellcheck', 'true')
+    // commentBox.setAttribute('contenteditable', 'true')
 
     const commentButton = document.createElement("button");
     commentButton.setAttribute('type','submit')
@@ -101,6 +103,7 @@ class Book {
       e.preventDefault();
       if (!this.isFavorite) {
         favoriteRow.classList = "on";
+        authorList.classList.add("on");
         this.isFavorite = true;
         addToFavoriteArray(this);
         // console.log(arrayOfAllFavorites);
@@ -109,6 +112,7 @@ class Book {
       }
       if (this.isFavorite) {
         favoriteRow.classList = "";
+        authorList.classList.remove("on");
         this.isFavorite = false;
         removeFromFavorite(this);
         countFavorites();

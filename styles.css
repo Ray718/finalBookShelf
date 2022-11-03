@@ -1,6 +1,44 @@
+body {
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--body-bg);
+    color: var(--txt-color);
+}
+
+.pageWrapper {
+    display: grid;
+    flex-flow: wrap;
+    justify-items: center;
+}
+
+.booksDiv {
+    display: flex;
+    flex-flow: row;
+    flex-flow: wrap;
+    justify-content:space-evenly;
+    /* gap: 10%; */
+    /* row-gap: 1%; */
+
+}
+
 .books {
-    border: 1px solid black;
+    display: grid;
+    margin: 10px 10px 10px 10px;
+    padding: 2px;
+    border: 2px solid black;
+    height: 2%;
     width: 25%;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.bookSubject {
+    list-style: none;
+}
+
+
+.books span {
+    cursor: grab;
 }
 
 .books span.on {
@@ -8,14 +46,18 @@
     color: red;
     /* background: red; */
 }
+
+.books.on {
+    background: url('./images/heart.png');
+}
 .bookSubmitFormDiv {
-    width: 25%;
+    width: 100%;
     border: 1px solid red;
     /* background: red; */
 }
 
 .searchBoxDiv {
-    width: 25%;
+    width: 100%;
     border: 1px solid blue
 }
 
@@ -25,7 +67,9 @@
 } */
 
 .imageHolder {
-    width: 10%;
+    width: 50%;
+    align-self: center;
+    justify-self: center;
 }
 
 .dark {
@@ -35,24 +79,6 @@
     --txt-color: #d2d2d2;
 }
 
-body {
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    background-color: var(--body-bg);
-    color: var(--txt-color);
-}
-
-.pageWrapper {
-    display: flex;
-    /* flex-flow: wrap; */
-}
-
-.booksDiv {
-    display: flex;
-    flex-flow: wrap;
-    gap: 1%;
-    row-gap: 1%;
-}
 .footer {
     position: fixed;
     bottom: 1%;
@@ -62,9 +88,9 @@ body {
     background-color: red;
 }
 
-/* #unordered {
+#unordered {
     list-style-type: none;
-} */
+}
 
 #edit {
     width: 50px;
