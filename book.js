@@ -18,9 +18,9 @@ class Book {
     const imageHolder = document.createElement("img");
     imageHolder.classList = "imageHolder";
     imageHolder.src =
-      "./images/" + Math.floor(Math.random() * (3 - 1) + 1) + ".png";
+      "./images/" + Math.floor(Math.random() * (10 - 1) + 1) + ".jpeg";
 
-    const authorName = document.createElement("h2");
+    const authorName = document.createElement("h3");
     authorName.classList = "authorName";
 
     const authorTitle = document.createElement("h4");

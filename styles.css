@@ -1,14 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
     display: flex;
     font-family: "Roboto", sans-serif;
+    background-image: url("/images/booksbackground.jpeg");
     background-color: var(--body-bg);
     color: var(--txt-color);
 }
 
 .pageWrapper {
-    display: grid;
+    display: flex;
     flex-flow: wrap;
-    justify-items: center;
+    flex-direction:row;
+    justify-content: space-around;
+
+}
+
+.pageHeading {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
 }
 
 .booksDiv {
@@ -23,14 +46,32 @@ body {
 
 .books {
     display: grid;
-    margin: 10px 10px 10px 10px;
+    margin: 0px 0px 0px 0px;
     padding: 2px;
     border: 2px solid black;
-    height: 2%;
+    height: 30em;
     width: 25%;
+    justify-content: center;
     line-height: 1;
     overflow: hidden;
 }
+.authorName {
+    margin-bottom: -50px;
+}
+.authorTitle {
+    margin-bottom: -25px;
+}
+
+ul {
+    margin-bottom: -15px;
+}
+p {
+    margin-bottom: -15px;
+}
+#comment-box {
+    margin-bottom: -15px;
+}
+
 
 .bookSubject {
     list-style: none;
@@ -38,6 +79,7 @@ body {
 
 
 .books span {
+    margin-bottom: -15px;
     cursor: grab;
 }
 
@@ -48,8 +90,12 @@ body {
 }
 
 .books.on {
-    background: url('./images/heart.png');
+    background-image: url('./images/heart.png');
+    background-size: 25%;
+    background-repeat: no-repeat;
+
 }
+
 .bookSubmitFormDiv {
     width: 100%;
     border: 1px solid red;
@@ -67,7 +113,7 @@ body {
 } */
 
 .imageHolder {
-    width: 50%;
+    width: 25%;
     align-self: center;
     justify-self: center;
 }
@@ -77,14 +123,17 @@ body {
     --box-bg: #151515;
     --box-border-color: #262626;
     --txt-color: #d2d2d2;
+    background-image: url('');
 }
 
 .footer {
     position: fixed;
     bottom: 1%;
+    left: 50%;
 }
 
 #post {
+    margin-bottom: -15px;
     background-color: red;
 }
 
@@ -100,4 +149,18 @@ body {
 #post {
     width: 50px;
     color: blue;
+}
+
+/* Utility */
+.p15{
+    padding: 15px;
+}
+.bg1{
+    background-color: white;
+}
+.booksDiv{
+
+}
+.books{
+
 }
