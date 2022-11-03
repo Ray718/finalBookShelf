@@ -25,3 +25,29 @@
 .imageHolder {
     width: 10%;
 }
+
+.dark {
+    --body-bg: #151515;
+    --box-bg: #151515;
+    --box-border-color: #262626;
+    --txt-color: #d2d2d2;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--body-bg);
+    color: var(--txt-color);
+}
+
+.footer {
+    position: fixed;
+    bottom: 1%;
+}
+
+#post {
+    background-color: red;
+}
+
+/* #unordered {
+    list-style-type: none;
+} */
