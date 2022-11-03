@@ -5,6 +5,8 @@ class Book {
     this.subject = subject;
     this.title = title;
     this.isFavorite = false;
+    this.comment = '';
+    this.isCommented = false;
   }
 
   renderBook(prepend) {
@@ -39,12 +41,52 @@ class Book {
     commentBox.setAttribute("type", "text");
     commentBox.setAttribute("placeholder", "Enter Comment");
     commentBox.setAttribute("id", "comment-box");
+    commentBox.setAttribute('maxLength', '280')
 
     const commentButton = document.createElement("button");
+    commentButton.setAttribute('type','submit')
+    commentButton.setAttribute('id','post')
+    commentButton.textContent = 'Post'
+
+    // const editCommentButton = document.createElement("button");
     // commentButton.setAttribute('type','submit')
+    // commentButton.setAttribute('id','edit')
+    // commentButton.textContent = 'Edit'
     // commentButton.id = 'post'
     const commentUl = document.createElement("ul");
     commentUl.setAttribute("id", "unordered");
+
+    const commentListItem = document.createElement("li");
+    commentListItem.setAttribute('id','commentListItem')
+    // this.comment = commentBox.value
+    // commentListItem.textContent = this.author
+
+    //  commentUl.appendChild(commentListItem)
+
+    commentButton.addEventListener(('click'), (e) => {
+      this.comment = commentBox.value
+      if (this.comment === '') {
+        alert('Please enter a comment')
+      } else {
+      this.ul = commentUl
+      this.li = document.createElement('li')
+      this.li.textContent = this.comment
+      commentUl.append(this.li.textContent)
+      this.isCommented = true;
+      clearCommentBox(e)
+      }
+    });
+    const clearCommentBox = (e) => {
+      if (this.isCommented) {
+      commentBox.value = '';
+      // commentBox.setAttribute('visibility','hidden')
+      commentBox.style.visibility = 'hidden'
+      commentButton.disabled = true;
+      commentButton.style.visibility = 'hidden'
+      // commentBox.setAttribute("placeholder", "Comment Posted");
+      // commentBox.disabled = true;
+      }
+      }
 
     for (const subjects of this.subject) {
       // this.subject.map((subjects) => {
@@ -55,13 +97,13 @@ class Book {
     }
     ///-->event listener will add the class of on and add to an array for the count
     favoriteRow.addEventListener("click", (e) => {
-      // console.log(e);
+      console.log(this);
       e.preventDefault();
       if (!this.isFavorite) {
         favoriteRow.classList = "on";
         this.isFavorite = true;
         addToFavoriteArray(this);
-        console.log(arrayOfAllFavorites);
+        // console.log(arrayOfAllFavorites);
         countFavorites();
         return;
       }
@@ -83,6 +125,7 @@ class Book {
         bookLanguage,
         favoriteRow,
         commentBox,
+        // editCommentButton,
         commentButton,
         commentUl
       );
@@ -97,6 +140,7 @@ class Book {
         bookLanguage,
         favoriteRow,
         commentBox,
+        // editCommentButton,
         commentButton,
         commentUl
       );
@@ -119,16 +163,16 @@ const countFavorites = () => {
     arrayOfAllFavorites.reduce((acc) => acc + 1, 0);
 };
 
-const onlyFavoritesCheckBox = document.querySelector(".showFavoritesOnly");
-onlyFavoritesCheckBox.addEventListener("change", (e) => {
-  if (e.target.checked) {
-    // showOnlyFavorites();
-    alert("test checked")
-  } else {
-    alert("test unchecked")
-    // location.reload()
-  }
-});
+// const onlyFavoritesCheckBox = document.querySelector(".showFavoritesOnly");
+// onlyFavoritesCheckBox.addEventListener("change", (e) => {
+//   if (e.target.checked) {
+//     // showOnlyFavorites();
+//     alert("test checked")
+//   } else {
+//     alert("test unchecked")
+//     // location.reload()
+//   }
+// });
 ///-->book created using the render book function//removed for now
 let vinceFlynn = new Book(
   "Flynn, Vince",
@@ -136,25 +180,29 @@ let vinceFlynn = new Book(
   ["killing", "Kill", "Killed"],
   "American Assassin"
 );
-vinceFlynn.renderBook();
+// bookShelf1.addBook(vinceFlynn)
+vinceFlynn.renderBook(true);
 let vinceFlynn1 = new Book(
   "Flynn, Vince",
   "en",
   ["killing", "Kill", "Killed"],
   "Kill Shot"
 );
-vinceFlynn1.renderBook();
+// bookShelf1.addBook(vinceFlynn1)
+vinceFlynn1.renderBook(true);
 let vinceFlynn2 = new Book(
   "Flynn, Vince",
   "en",
   ["killing", "Kill", "Killed"],
   "Consent To Kill"
 );
-vinceFlynn2.renderBook();
+// bookShelf1.addBook(vinceFlynn2)
+vinceFlynn2.renderBook(true);
 let vinceFlynn3 = new Book(
   "Flynn, Vince",
   "en",
   ["killing", "Kill", "Killed"],
   "The Last Man"
 );
-vinceFlynn3.renderBook();
+// bookShelf1.addBook(vinceFlynn3)
+vinceFlynn3.renderBook(true);

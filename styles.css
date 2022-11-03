@@ -3,8 +3,10 @@
     width: 25%;
 }
 
-.books span {
-    background: red;
+.books span.on {
+    font-size: 20px;
+    color: red;
+    /* background: red; */
 }
 .bookSubmitFormDiv {
     width: 25%;
@@ -34,11 +36,23 @@
 }
 
 body {
+    display: flex;
     font-family: "Roboto", sans-serif;
     background-color: var(--body-bg);
     color: var(--txt-color);
 }
 
+.pageWrapper {
+    display: flex;
+    /* flex-flow: wrap; */
+}
+
+.booksDiv {
+    display: flex;
+    flex-flow: wrap;
+    gap: 1%;
+    row-gap: 1%;
+}
 .footer {
     position: fixed;
     bottom: 1%;
@@ -51,3 +65,13 @@ body {
 /* #unordered {
     list-style-type: none;
 } */
+
+#edit {
+    width: 50px;
+    color: red;
+}
+
+#post {
+    width: 50px;
+    color: blue;
+}

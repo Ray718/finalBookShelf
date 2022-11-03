@@ -41,7 +41,7 @@ const SortEdBooksList = (book) => {
       book.author,
       book.language,
       book.subject,
-      book.title
+      book.title,
     );
     bookShelf1.addBook(bookInstance);
   });

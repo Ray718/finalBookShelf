@@ -21,7 +21,7 @@ function clearInput() {
     } else {
       ///-->will create a new book and use the renderbook with true, which use the append option
       const addedBook = new Book(newAuthor, newLanguage, [newSubject], newTitle);
-      console.log(addedBook);
+      // console.log(addedBook);
       bookShelf1.addBook(addedBook);
       addedBook.renderBook(true);
       clearInput();
