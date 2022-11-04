@@ -5,17 +5,13 @@
 
 body {
     display: flex;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Oswald';
     background-image: url("/images/booksbackground.jpeg");
     background-color: var(--body-bg);
     color: var(--txt-color);
 }
 
 .pageWrapper {
-    /* display: flex;
-    flex-flow: wrap;
-    //flex-direction:row;
-    justify-content: space-around; */
     border:solid thin red;
     width: 100%;
 
@@ -25,6 +21,11 @@ body {
     flex-direction: row;
     max-width: 500px;
     margin: 10px auto;
+}
+
+.sortSelection {
+    border-radius: 8px;
+    text-align: center;
 }
 .sortSelectionDiv{
     margin-right: 15px;
@@ -40,9 +41,6 @@ body {
 }
 
 .container {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-evenly */
     padding: 15px;
     width: 500px;
     margin: 0 auto;
@@ -51,39 +49,45 @@ body {
 .booksDiv {
     display: flex;
     flex-flow: wrap;
-    
     margin:0 auto;
-    /* flex-flow: row; */
-    
     justify-content:space-evenly; 
-    /* flex-direction: row; */
-    /* max-width: 20%; */
-    /* gap: 10%; */
-    /* row-gap: 1%; */
     gap: 10px;
-
-
 }
 
 .books {
     display: flex;
     flex-direction: column;
     margin: 0px 0px 0px 0px;
-    border: 2px solid black;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 25px;
     padding: 12px;
     justify-content: center;
     line-height: 1;
     overflow: hidden;
     width: 20%;
-    height: 325px;
+    height: 400px;
     background-color: rgba(255,255,255,.5)
 
 }
 .books img{
-    height: 50px;
+    height: 100px;
+}
+.imageHolder {
+    width: 75px;
+    padding-bottom: 10px;
+    margin-top: -5px;
+    align-self: center;
+    justify-self: center;
 }
 
+.books li{
+    font-style: italic;
+}
 
+.books p{
+    font-size: 10px;
+    font-weight: bold;
+}
 .bookSubject {
     list-style: none;
     font-size: 10px;
@@ -91,22 +95,23 @@ body {
 
 .books input {
     margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
 }
 .books span {
     cursor: grab;
 }
 
 .books span.on {
-    font-size: 20px;
+    font-size: 25px;
     color: red;
-    /* background: red; */
 }
 
 .books.on {
     background-image: url('./images/heart.png');
     background-size: 15%;
     background-repeat: no-repeat;
-    background-position: 10px 10px;
+    background-position: 30px 20px;
     animation: shake 0.5s;
     animation-iteration-count: 1s;
 
@@ -134,19 +139,12 @@ body {
 
 .searchBoxDiv {
     width: 100%;
-    /* border: 1px solid blue */
 }
 
 /* .FavoriteCount {
     width: 25%;
     border: 1px solid green;
 } */
-
-.imageHolder {
-    width: 25px;
-    align-self: center;
-    justify-self: center;
-}
 
 .dark {
     --body-bg: #151515;
@@ -157,16 +155,51 @@ body {
 }
 
 .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     bottom: 1%;
     left: 50%;
+    word-spacing: 1rem;
 }
 
 #post {
     margin-bottom: -15px;
-    background-color: red;
+    width: 50px;
+    background-color: gray;
+    color: black;
+    border-radius: 10px;
+    text-align: center;
 }
 
+.showFavoritesOnlyDiv {
+    display: flex;
+    margin-left: 30%;
+}
+
+.submitButton {
+    margin-bottom: -15px;
+    width: 20%;
+    background-color: gray;
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+}
+.bookFormDiv input{
+    width: 50%;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    text-align: center;
+    color: red;
+    border: 1px solid gray;
+    box-shadow: 0 0 15px 4px black;
+}
+
+.centralLibrary {
+    font-style: italic;
+    text-shadow: 2px 1px gray;
+}
 #unordered {
     list-style-type: none;
 }
@@ -176,24 +209,26 @@ body {
     color: red;
 }
 
-#post {
-    width: 50px;
-    color: blue;
-}
-
 /* Utility */
 h1{
     margin-top: 15px;
 }
-h1,h3,h4{
+h1{
     margin-bottom: 10px;
     text-align: center;
 }
-h2{
-    margin-bottom: 10px;
-}
 h3{
     margin-bottom: 10px;
+    text-align: center;
+    font-size: 15px;
+    text-decoration: underline;
+    
+}
+h4 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: lighter;
 }
 .p15{
     padding: 15px;
@@ -201,28 +236,19 @@ h3{
 .bg1{
     background-color: rgba(255,255,255,.5)
 }
-/* .bookForm {
-    display: flex;
-}
-
-.bookFormDiv {
-    width: 100%;
-} */
-
-.bookFormDiv input{
-    width: 50%;
-}
-
-.submitButton {
-    width: 25%;
-}
 
 .searchBox {
     width: 50%;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .favoriteCountAdjust.on{
     font-size: large;
     color: red;
 
+}
+
+#unordered {
+    overflow-y: scroll;
 }

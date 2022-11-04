@@ -31,9 +31,13 @@ body {
   }
   
   .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     bottom: 1%;
     left: 50%;
+    word-spacing: 1rem;
 }
 
 input[type=text], select, textarea {

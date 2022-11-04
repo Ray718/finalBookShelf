@@ -18,7 +18,7 @@ class Book {
     const imageHolder = document.createElement("img");
     imageHolder.classList = "imageHolder";
     imageHolder.src =
-      "./images/4.jpeg";
+      "./images/2.jpeg";
 
     const authorName = document.createElement("h3");
     authorName.classList = "authorName";
@@ -62,6 +62,7 @@ class Book {
       } else {
       this.ul = commentUl
       this.li = document.createElement('li')
+      this.li.setAttribute('word-wrap','break-word')
       this.li.textContent = this.comment
       commentUl.append(this.li.textContent)
       this.isCommented = true;
@@ -169,4 +170,3 @@ const countFavorites = () => {
       document.querySelector('.favoriteCountAdjust').classList.remove('on')
     }
 };
-
