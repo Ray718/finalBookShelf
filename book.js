@@ -161,7 +161,12 @@ const removeFromFavorite = (a) => {
 };
 ///-->using reduce to count how many favorites are in the array
 const countFavorites = () => {
-  document.querySelector(".favoriteCountAdjust").textContent =
+     document.querySelector(".favoriteCountAdjust").textContent =
     arrayOfAllFavorites.reduce((acc) => acc + 1, 0);
+    if (document.querySelector(".favoriteCountAdjust").textContent >= 1) {
+      document.querySelector('.favoriteCountAdjust').classList.add('on')
+    } else {
+      document.querySelector('.favoriteCountAdjust').classList.remove('on')
+    }
 };
 

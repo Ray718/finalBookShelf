@@ -41,6 +41,12 @@ class BookShelf {
     this.renderShelf()
   }
 
+  showFavorites (array) {
+   this.searchResults = arrayOfAllFavorites
+   bookList.innerHTML = ''
+   this.renderShelf()
+   this.searchResults = []
+  }
   search(searchValue) {
     this.searchResults = this.arrayOfBooks.filter((book) => {
     return (book.author.toString().toLowerCase().includes(searchValue) || book.title.toString().toLowerCase().includes(searchValue) || book.subject.toString().toLowerCase().includes(searchValue))
@@ -65,6 +71,15 @@ sortSelector.addEventListener("change", () => {
   bookShelf1.sort(sortSelections.value)
 })
 
+const showFavoritesSelection = document.querySelector(".showFavoritesOnly")
+showFavoritesSelection.addEventListener('change', (e) => {
+  if (e.target.checked) {
+  bookShelf1.showFavorites()
+  }
+  else {
+  bookShelf1.renderShelf()
+  }
+})
 ///--> creating a bookshelf, basically extracting information from the data file and pushing it into the this.arrayOfBooks
 const bookShelf1 = new BookShelf();
 ///-->creates a new book, this is the information used in the new bookShelf1
@@ -83,7 +98,7 @@ bookShelf1.renderShelf();
 let vinceFlynn = new Book(
   "Flynn, Vince",
   "en",
-  ["killing", "Kill", "Killed"],
+  ["Spy", "American", "Assasin"],
   "American Assassin"
 );
 bookShelf1.addBook(vinceFlynn)
@@ -91,7 +106,7 @@ vinceFlynn.renderBook(true);
 let vinceFlynn1 = new Book(
   "Flynn, Vince",
   "en",
-  ["killing", "Kill", "Killed"],
+  ["Shooting", "Sniper", "Assasin"],
   "Kill Shot"
 );
 bookShelf1.addBook(vinceFlynn1)
@@ -99,7 +114,7 @@ vinceFlynn1.renderBook(true);
 let vinceFlynn2 = new Book(
   "Flynn, Vince",
   "en",
-  ["killing", "Kill", "Killed"],
+  ["Spy", "Orders", "Consent"],
   "Consent To Kill"
 );
 bookShelf1.addBook(vinceFlynn2)
@@ -107,7 +122,7 @@ vinceFlynn2.renderBook(true);
 let vinceFlynn3 = new Book(
   "Flynn, Vince",
   "en",
-  ["killing", "Kill", "Killed"],
+  ["American", "Government", "Spy"],
   "The Last Man"
 );
 bookShelf1.addBook(vinceFlynn3)

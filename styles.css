@@ -220,3 +220,9 @@ h3{
 .searchBox {
     width: 50%;
 }
+
+.favoriteCountAdjust.on{
+    font-size: large;
+    color: red;
+
+}
