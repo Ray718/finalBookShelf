@@ -77,6 +77,7 @@ showFavoritesSelection.addEventListener('change', (e) => {
   bookShelf1.showFavorites()
   }
   else {
+    bookList.innerHTML = ''
   bookShelf1.renderShelf()
   }
 })
