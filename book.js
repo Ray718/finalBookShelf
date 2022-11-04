@@ -4,7 +4,7 @@ class Book {
     this.language = language;
     this.subject = subject;
     this.title = title;
-    this.isFavorite = false;
+    this.isFavorite,
     this.comment = '';
     this.isCommented = false;
   }
@@ -43,28 +43,18 @@ class Book {
     commentBox.setAttribute("id", "comment-box");
     commentBox.setAttribute('maxLength', '280')
     commentBox.setAttribute('spellcheck', 'true')
-    // commentBox.setAttribute('contenteditable', 'true')
 
     const commentButton = document.createElement("button");
     commentButton.setAttribute('type','submit')
     commentButton.setAttribute('id','post')
     commentButton.textContent = 'Post'
 
-    // const editCommentButton = document.createElement("button");
-    // commentButton.setAttribute('type','submit')
-    // commentButton.setAttribute('id','edit')
-    // commentButton.textContent = 'Edit'
-    // commentButton.id = 'post'
     const commentUl = document.createElement("ul");
     commentUl.setAttribute("id", "unordered");
 
     const commentListItem = document.createElement("li");
     commentListItem.setAttribute('id','commentListItem')
-    // this.comment = commentBox.value
-    // commentListItem.textContent = this.author
-
-    //  commentUl.appendChild(commentListItem)
-
+  
     commentButton.addEventListener(('click'), (e) => {
       this.comment = commentBox.value
       if (this.comment === '') {
@@ -91,22 +81,32 @@ class Book {
       }
 
     for (const subjects of this.subject) {
-      // this.subject.map((subjects) => {
       const bookSubject = document.createElement("li");
       bookSubject.classList = "bookSubject";
       bookSubject.textContent = subjects;
       bookSubjectList.append(bookSubject);
     }
+
+    if (this.isFavorite) { 
+    favoriteRow.classList = "on";
+    authorList.classList.add("on");
+  }
+
+  if (this.isCommented) { 
+    this.ul = commentUl
+    this.li = document.createElement('li')
+    this.li.textContent = this.comment
+    commentUl.append(this.li.textContent)
+    clearCommentBox(this)
+  }
     ///-->event listener will add the class of on and add to an array for the count
     favoriteRow.addEventListener("click", (e) => {
-      console.log(this);
       e.preventDefault();
       if (!this.isFavorite) {
         favoriteRow.classList = "on";
         authorList.classList.add("on");
         this.isFavorite = true;
         addToFavoriteArray(this);
-        // console.log(arrayOfAllFavorites);
         countFavorites();
         return;
       }
@@ -129,7 +129,6 @@ class Book {
         bookLanguage,
         favoriteRow,
         commentBox,
-        // editCommentButton,
         commentButton,
         commentUl
       );
@@ -144,7 +143,6 @@ class Book {
         bookLanguage,
         favoriteRow,
         commentBox,
-        // editCommentButton,
         commentButton,
         commentUl
       );
@@ -167,46 +165,3 @@ const countFavorites = () => {
     arrayOfAllFavorites.reduce((acc) => acc + 1, 0);
 };
 
-// const onlyFavoritesCheckBox = document.querySelector(".showFavoritesOnly");
-// onlyFavoritesCheckBox.addEventListener("change", (e) => {
-//   if (e.target.checked) {
-//     // showOnlyFavorites();
-//     alert("test checked")
-//   } else {
-//     alert("test unchecked")
-//     // location.reload()
-//   }
-// });
-///-->book created using the render book function//removed for now
-let vinceFlynn = new Book(
-  "Flynn, Vince",
-  "en",
-  ["killing", "Kill", "Killed"],
-  "American Assassin"
-);
-// bookShelf1.addBook(vinceFlynn)
-vinceFlynn.renderBook(true);
-let vinceFlynn1 = new Book(
-  "Flynn, Vince",
-  "en",
-  ["killing", "Kill", "Killed"],
-  "Kill Shot"
-);
-// bookShelf1.addBook(vinceFlynn1)
-vinceFlynn1.renderBook(true);
-let vinceFlynn2 = new Book(
-  "Flynn, Vince",
-  "en",
-  ["killing", "Kill", "Killed"],
-  "Consent To Kill"
-);
-// bookShelf1.addBook(vinceFlynn2)
-vinceFlynn2.renderBook(true);
-let vinceFlynn3 = new Book(
-  "Flynn, Vince",
-  "en",
-  ["killing", "Kill", "Killed"],
-  "The Last Man"
-);
-// bookShelf1.addBook(vinceFlynn3)
-vinceFlynn3.renderBook(true);
