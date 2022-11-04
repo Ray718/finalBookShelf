@@ -1,21 +1,60 @@
 body {
     display: flex;
+    background-color: var(--body-bg);
+    color: var(--txt-color);
+    background-image: url('/images/booksbackground.jpeg');
+   
+    
 }
+
+
 .main-container {
     /* width: 50%; */
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
+    /* flex-direction: row; */
+    justify-content:space-evenly;
+    margin: 0 auto;
+    margin-top: 5%;
+    /* top: 200px; */
+    /* gap: 10px; */
 
 }
 
+
 .aboutPage {
-    font-size: 15px;
-    border: 1px solid black;
-    width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin: 0px 0px 0px 0px;
+    /* border: 2px solid black; */
+    padding: 12px;
+    justify-content:center;
+    /* line-height: 1; */
+    overflow: hidden;
+    width: 20%;
+    height: 45%;
+    width: 25%;
     /* align-self: flex-start; */
 }
 
 
+.dark {
+    --body-bg: #151515;
+    --box-bg: #151515;
+    --box-border-color: #262626;
+    --txt-color: #d2d2d2;
+    background-image: url('');
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+}
+
+.about-navigation {
+    position: fixed;
+    top: 1%;
+    left: 50%;
+}
