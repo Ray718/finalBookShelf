@@ -12,7 +12,7 @@ body {
 }
 
 .pageWrapper {
-    border:solid thin red;
+    /* border:solid thin red; */
     width: 100%;
 
 }
@@ -100,6 +100,10 @@ body {
 }
 .books span {
     cursor: grab;
+}
+
+.books span {
+    color: black;
 }
 
 .books span.on {
